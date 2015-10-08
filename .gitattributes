@@ -1,0 +1,58 @@
+# Set default behaviour, in case users don't have core.autocrlf unset.
+* -text
+
+# diff behavior 
+*.cs      diff=csharp
+*.c       diff=cpp
+*.cpp     diff=cpp
+*.cxx     diff=cpp
+*.h       diff=cpp
+*.hxx     diff=cpp
+*.py      diff=python
+*.rb      diff=ruby
+*.java    diff=java
+*.html    diff=html
+*.htm     diff=html
+
+# merge behavior 
+*.csproj  merge=union 
+*.vbproj  merge=union 
+*.fsproj  merge=union 
+*.dbproj  merge=union 
+*.sln     merge=union 
+
+# Images should be treated as binary
+# (binary is a macro for -text -diff)
+*.png     binary
+*.PNG     binary
+*.jpg     binary
+*.JPG     binary
+*.jpeg    binary
+*.JPEG    binary
+*.gif     binary
+*.GIF     binary
+*.bmp     binary
+*.BMP     binary
+*.ico     binary
+*.ICO     binary
+*.ppm     binary
+*.pgm     binary
+*.pbm     binary
+*.xpm     -text diff -merge
+
+# Vector graphics
+*.svg     -text diff -merge
+
+*.sdf     binary
+
+# diff behavior for common document formats
+*.doc   diff=astextplain
+*.DOC   diff=astextplain
+*.docx  diff=astextplain
+*.DOCX  diff=astextplain
+*.dot   diff=astextplain
+*.DOT   diff=astextplain
+*.pdf   diff=astextplain
+*.PDF   diff=astextplain
+*.rtf   diff=astextplain
+*.RTF   diff=astextplain
