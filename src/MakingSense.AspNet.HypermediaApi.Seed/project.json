@@ -8,7 +8,8 @@
     "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
     "MakingSense.AspNet.Authentication.SimpleToken": "0.1.0-beta7-4",
     "MakingSense.AspNet.Documentation": "0.1.0-beta7-5",
-    "MakingSense.AspNet.HypermediaApi": "0.1.0-beta7-6"
+    "MakingSense.AspNet.HypermediaApi": "0.1.0-beta7-6",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7"
   },
 
   "commands": {
