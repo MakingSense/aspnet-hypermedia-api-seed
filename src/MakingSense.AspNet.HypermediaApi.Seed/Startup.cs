@@ -8,6 +8,8 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.AspNet.FileProviders;
 using Microsoft.Dnx.Runtime;
 using MakingSense.AspNet.Documentation;
+using MakingSense.AspNet.HypermediaApi.Formatters;
+using MakingSense.AspNet.HypermediaApi.ValidationFilters;
 
 namespace MakingSense.AspNet.HypermediaApi.Seed
 {
@@ -16,18 +18,31 @@ namespace MakingSense.AspNet.HypermediaApi.Seed
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options =>
+            {
+                options.OutputFormatters.Clear();
+                options.OutputFormatters.Add(new HypermediaApiJsonOutputFormatter());
+
+                options.InputFormatters.Clear();
+                options.InputFormatters.Add(new HypermediaApiJsonInputFormatter());
+
+                options.Filters.Add(new PayloadValidationFilter());
+                options.Filters.Add(new RequiredPayloadFilter());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IApplicationEnvironment appEnv)
         {
+            app.UseApiErrorHandler();
+
+
+            app.UseMvc();
+
             app.UseStaticFiles();
 
             UseDocumentation(app, appEnv);
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseNotFoundHandler();
         }
 
         private static void UseDocumentation(IApplicationBuilder app, IApplicationEnvironment appEnv)
