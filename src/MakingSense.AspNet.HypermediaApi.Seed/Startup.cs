@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.AspNet.FileProviders;
-using Microsoft.Dnx.Runtime;
 using MakingSense.AspNet.Documentation;
 using MakingSense.AspNet.HypermediaApi.Formatters;
 using MakingSense.AspNet.HypermediaApi.ValidationFilters;
+using Microsoft.AspNet.Builder;
+using Microsoft.AspNet.FileProviders;
+using Microsoft.Dnx.Runtime;
+using Microsoft.Framework.DependencyInjection;
 
 namespace MakingSense.AspNet.HypermediaApi.Seed
 {
