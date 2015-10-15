@@ -29,6 +29,8 @@ namespace MakingSense.AspNet.HypermediaApi.Seed
                 options.Filters.Add(new RequiredPayloadFilter());
             });
 
+            services.AddTransient<System.IdentityModel.Tokens.ISecurityTokenValidator, SeedTokenValidator>();
+
             services.AddLinkHelper<SeedLinkHelper>();
         }
 
@@ -36,6 +38,10 @@ namespace MakingSense.AspNet.HypermediaApi.Seed
         {
             app.UseApiErrorHandler();
 
+            app.UseSimpleTokenAuthentication(o =>
+            {
+                o.AutomaticAuthentication = true;
+            });
 
             app.UseMvc();
 
