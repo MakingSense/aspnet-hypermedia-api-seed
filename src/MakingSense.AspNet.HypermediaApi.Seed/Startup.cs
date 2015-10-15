@@ -28,6 +28,8 @@ namespace MakingSense.AspNet.HypermediaApi.Seed
                 options.Filters.Add(new PayloadValidationFilter());
                 options.Filters.Add(new RequiredPayloadFilter());
             });
+
+            services.AddLinkHelper<SeedLinkHelper>();
         }
 
         public void Configure(IApplicationBuilder app, IApplicationEnvironment appEnv)
