@@ -7,6 +7,7 @@ using MakingSense.AspNet.HypermediaApi.Linking;
 using MakingSense.AspNet.HypermediaApi.Seed.Controllers;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Mvc.Infrastructure;
 using Microsoft.Framework.Internal;
 
 namespace MakingSense.AspNet.HypermediaApi.Seed

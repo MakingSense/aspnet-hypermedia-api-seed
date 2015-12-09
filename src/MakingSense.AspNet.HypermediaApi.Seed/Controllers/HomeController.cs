@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using MakingSense.AspNet.HypermediaApi.Linking;
 using MakingSense.AspNet.HypermediaApi.Model;
 using MakingSense.AspNet.HypermediaApi.Seed.Relations;
-using Microsoft.AspNet.Mvc;
-using Microsoft.Framework.Logging;
-using Microsoft.Framework.Internal;
 using Microsoft.AspNet.Authorization;
+using Microsoft.AspNet.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Framework.Internal;
 
 namespace MakingSense.AspNet.HypermediaApi.Seed.Controllers
 {

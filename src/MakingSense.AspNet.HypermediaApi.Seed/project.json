@@ -3,22 +3,18 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "MakingSense.AspNet.Authentication.SimpleToken": "0.1.0-beta7-4",
-    "MakingSense.AspNet.Documentation": "0.1.0-beta7-5",
-    "MakingSense.AspNet.HypermediaApi": "0.1.0-beta7-6",
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
-    "Microsoft.Framework.NotNullAttribute.Sources": {
-      "type": "build",
-      "version": "1.0.0-beta7"
-    }
+    "MakingSense.AspNet.Authentication.SimpleToken": "0.1.0-rc1-final-14",
+    "MakingSense.AspNet.Documentation": "0.1.0-rc1-final-13",
+    "MakingSense.AspNet.HypermediaApi": "0.1.0-rc1-final-36",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-rc1-final",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final"
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Hosting --config hosting.ini",
-    "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini"
+    "web": "Microsoft.AspNet.Server.Kestrel"
   },
 
   "frameworks": {
