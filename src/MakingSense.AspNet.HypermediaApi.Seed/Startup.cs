@@ -40,7 +40,8 @@ namespace MakingSense.AspNet.HypermediaApi.Seed
 
             app.UseSimpleTokenAuthentication(o =>
             {
-                o.AutomaticAuthentication = true;
+                o.AutomaticAuthenticate = true;
+                o.AutomaticChallenge = true;
             });
 
             app.UseMvc();
