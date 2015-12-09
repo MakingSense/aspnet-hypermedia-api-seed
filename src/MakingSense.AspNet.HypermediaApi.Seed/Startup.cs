@@ -7,8 +7,8 @@ using MakingSense.AspNet.HypermediaApi.Formatters;
 using MakingSense.AspNet.HypermediaApi.ValidationFilters;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.FileProviders;
-using Microsoft.Dnx.Runtime;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
 
 namespace MakingSense.AspNet.HypermediaApi.Seed
 {
