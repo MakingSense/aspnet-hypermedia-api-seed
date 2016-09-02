@@ -1,0 +1,42 @@
+﻿{
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "MakingSense.AspNetCore.Authentication.SimpleToken": "1.0.0*",
+    "MakingSense.AspNetCore.Documentation": "1.0.0*",
+    "MakingSense.AspNetCore.HypermediaApi": "1.0.0*",
+    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "Microsoft.Extensions.Logging.Console": "1.0.0"
+  },
+  "publishOptions": {
+    "include": [
+      "web.config",
+      "wwwroot"
+    ]
+  },
+  "tools": {
+    "Microsoft.DotNet.Watcher.Tools": "1.0.0-*"
+  },
+  "runtimes": {
+    "win10-x86": {}
+  },
+  "frameworks": {
+    "net451": {},
+    "netcoreapp1.0": {
+      "Microsoft.NETCore.App": {
+        "version": "1.0.0",
+        "type": "platform"
+      },
+      "Microsoft.CSharp": "4.0.1",
+      "System.Collections": "4.0.11",
+      "System.Linq": "4.1.0",
+      "System.Runtime": "4.1.0",
+      "System.Threading": "4.0.11"
+    }
+  }
+}

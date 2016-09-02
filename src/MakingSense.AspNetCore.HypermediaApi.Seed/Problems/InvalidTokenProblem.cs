@@ -1,10 +1,10 @@
-﻿using MakingSense.AspNet.HypermediaApi.Problems;
+﻿using MakingSense.AspNetCore.HypermediaApi.Problems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MakingSense.AspNet.HypermediaApi.Seed.Problems
+namespace MakingSense.AspNetCore.HypermediaApi.Seed.Problems
 {
     public class InvalidTokenProblem : AuthenticationProblem
     {

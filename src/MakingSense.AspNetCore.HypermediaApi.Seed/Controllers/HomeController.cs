@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MakingSense.AspNet.HypermediaApi.Linking;
-using MakingSense.AspNet.HypermediaApi.Model;
-using MakingSense.AspNet.HypermediaApi.Seed.Relations;
-using Microsoft.AspNet.Authorization;
-using Microsoft.AspNet.Mvc;
+using MakingSense.AspNetCore.HypermediaApi.Linking;
+using MakingSense.AspNetCore.HypermediaApi.Model;
+using MakingSense.AspNetCore.HypermediaApi.Seed.Relations;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Framework.Internal;
 
-namespace MakingSense.AspNet.HypermediaApi.Seed.Controllers
+namespace MakingSense.AspNetCore.HypermediaApi.Seed.Controllers
 {
     [Authorize]
     public class HomeController : Controller
@@ -35,9 +35,9 @@ namespace MakingSense.AspNet.HypermediaApi.Seed.Controllers
 
         [GetIndexRelation(Template = "/")]
         [AllowAnonymous]
-        public MessageModel Index()
+        public MessageResult Index()
         {
-            return new MessageModel()
+            return new MessageResult()
             {
                 message = "Welcome to Seed API!"
             }
@@ -45,9 +45,9 @@ namespace MakingSense.AspNet.HypermediaApi.Seed.Controllers
         }
 
         [GetAccountHomeRelation(Template = "/accounts/{accountName}")]
-        public MessageModel AccountHome(string accountName)
+        public MessageResult AccountHome(string accountName)
         {
-            return new MessageModel()
+            return new MessageResult()
             {
                 message = "Welcome to Seed API!"
             }

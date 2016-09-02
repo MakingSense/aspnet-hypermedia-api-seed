@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MakingSense.AspNet.Abstractions;
-using MakingSense.AspNet.HypermediaApi.Linking;
-using MakingSense.AspNet.HypermediaApi.Seed.Controllers;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Infrastructure;
+using MakingSense.AspNetCore.Abstractions;
+using MakingSense.AspNetCore.HypermediaApi.Linking;
+using MakingSense.AspNetCore.HypermediaApi.Seed.Controllers;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Framework.Internal;
 
-namespace MakingSense.AspNet.HypermediaApi.Seed
+namespace MakingSense.AspNetCore.HypermediaApi.Seed
 {
     public class SeedLinkHelper : BaseLinkHelper
     {
