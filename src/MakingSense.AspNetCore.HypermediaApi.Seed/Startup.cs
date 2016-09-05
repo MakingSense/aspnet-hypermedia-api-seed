@@ -42,7 +42,7 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
             services.AddLinkHelper<SeedLinkHelper>();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment hostingEnvironment)
         {
             app.UseApiErrorHandler();
 
@@ -56,22 +56,23 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
 
             app.UseStaticFiles();
 
-            //UseDocumentation(app, appEnv);
+            UseDocumentation(app, hostingEnvironment);
 
             app.UseNotFoundHandler();
         }
 
-        //private static void UseDocumentation(IApplicationBuilder app, ApplicationEnvironment appEnv)
-        //{
-        //    var documentationFilesProvider = new PhysicalFileProvider(appEnv.ApplicationBasePath);
-        //    app.UseDocumentation(new DocumentationOptions()
-        //    {
-        //        DefaultFileName = "index",
-        //        RequestPath = "/docs",
-        //        NotFoundHtmlFile = documentationFilesProvider.GetFileInfo("DocumentationTemplates\\NotFound.html"),
-        //        LayoutFile = documentationFilesProvider.GetFileInfo("DocumentationTemplates\\Layout.html")
-        //    });
-        //}
+        private static void UseDocumentation(IApplicationBuilder app, IHostingEnvironment hostingEnvironment)
+        {
+            var documentationFilesProvider = hostingEnvironment.ContentRootFileProvider;
+            app.UseDocumentation(new DocumentationOptions()
+            {
+                DefaultFileName = "index",
+                RequestPath = "/docs",
+                NotFoundHtmlFile = documentationFilesProvider.GetFileInfo("DocumentationTemplates\\NotFound.html"),
+                LayoutFile = documentationFilesProvider.GetFileInfo("DocumentationTemplates\\Layout.html")
+            });
+        }
+
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
