@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace MakingSense.AspNetCore.HypermediaApi.Seed
 {
@@ -19,6 +22,8 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddMvc(options =>
             {
                 //TODO: fix it
