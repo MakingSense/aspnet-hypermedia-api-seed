@@ -37,7 +37,7 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
                 options.Filters.Add(new RequiredPayloadFilter());
             });
 
-            //services.AddTransient<Microsoft.IdentityModel.Tokens.ISecurityTokenValidator, SeedTokenValidator>();
+            services.AddTransient<Microsoft.IdentityModel.Tokens.ISecurityTokenValidator, SeedTokenValidator>();
 
             services.AddLinkHelper<SeedLinkHelper>();
         }
@@ -46,11 +46,10 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
         {
             app.UseApiErrorHandler();
 
-            //app.UseSimpleTokenAuthentication(o =>
-            //{
-            //    o.AutomaticAuthenticate = true;
-            //    o.AutomaticChallenge = true;
-            //});
+            app.UseSimpleTokenAuthentication(new SimpleTokenAuthenticationOptions()
+            {
+                AutomaticAuthenticate = true
+            });
 
             app.UseMvc();
 
