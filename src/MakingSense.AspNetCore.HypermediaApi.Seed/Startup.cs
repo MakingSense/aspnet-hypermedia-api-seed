@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MakingSense.AspNetCore.Documentation;
-using MakingSense.AspNetCore.HypermediaApi.Formatters;
 using MakingSense.AspNetCore.HypermediaApi.ValidationFilters;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNetCore.Hosting;
-using System.IO;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace MakingSense.AspNetCore.HypermediaApi.Seed
 {
@@ -26,16 +23,10 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
             services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddMvc(options =>
             {
-                //TODO: fix it
-                //options.OutputFormatters.Clear();
-                //options.OutputFormatters.Add(new HypermediaApiJsonOutputFormatter());
-
-                //options.InputFormatters.Clear();
-                //options.InputFormatters.Add(new HypermediaApiJsonInputFormatter());
-
                 options.Filters.Add(new PayloadValidationFilter());
                 options.Filters.Add(new RequiredPayloadFilter());
-            });
+            })
+            .SetHypermediaApiFormatters();
 
             services.AddTransient<Microsoft.IdentityModel.Tokens.ISecurityTokenValidator, SeedTokenValidator>();
 
@@ -44,7 +35,7 @@ namespace MakingSense.AspNetCore.HypermediaApi.Seed
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment hostingEnvironment)
         {
-            app.UseApiErrorHandler();
+            app.UseHypermediaApiErrorHandler();
 
             app.UseSimpleTokenAuthentication(new SimpleTokenAuthenticationOptions()
             {
