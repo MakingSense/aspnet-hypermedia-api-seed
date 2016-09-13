@@ -6,9 +6,9 @@
     "MakingSense.AspNetCore.Authentication.SimpleToken": "1.0.2-*",
     "MakingSense.AspNetCore.Documentation": "1.0.2-*",
     "MakingSense.AspNetCore.HypermediaApi": "1.0.2-*",
-    "Microsoft.AspNetCore.Mvc": "1.0.0",
+    "Microsoft.AspNetCore.Mvc": "1.0.1",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0"
@@ -29,7 +29,7 @@
     "net451": {},
     "netcoreapp1.0": {
       "Microsoft.NETCore.App": {
-        "version": "1.0.0",
+        "version": "1.0.1",
         "type": "platform"
       },
       "Microsoft.CSharp": "4.0.1",
