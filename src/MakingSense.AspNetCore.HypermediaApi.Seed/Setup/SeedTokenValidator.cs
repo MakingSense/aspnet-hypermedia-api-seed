@@ -1,13 +1,13 @@
-﻿using MakingSense.AspNet.HypermediaApi.ExceptionHandling;
-using MakingSense.AspNet.HypermediaApi.Seed.Problems;
+﻿using MakingSense.AspNetCore.HypermediaApi.ExceptionHandling;
+using MakingSense.AspNetCore.HypermediaApi.Seed.Problems;
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace MakingSense.AspNet.HypermediaApi.Seed
+namespace MakingSense.AspNetCore.HypermediaApi.Seed
 {
     public class SeedTokenValidator : ISecurityTokenValidator
     {

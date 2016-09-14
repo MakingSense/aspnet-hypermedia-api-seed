@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MakingSense.AspNet.HypermediaApi.Linking;
-using MakingSense.AspNet.HypermediaApi.Metadata;
-using MakingSense.AspNet.HypermediaApi.Model;
+using MakingSense.AspNetCore.HypermediaApi.Linking;
+using MakingSense.AspNetCore.HypermediaApi.Metadata;
+using MakingSense.AspNetCore.HypermediaApi.Model;
 
-namespace MakingSense.AspNet.HypermediaApi.Seed.Relations
+namespace MakingSense.AspNetCore.HypermediaApi.Seed.Relations
 {
     public class GetAccountHomeRelation : ActionRelationAttribute
     {
         public override HttpMethod? Method => HttpMethod.GET;
-        public override Type OutputModel => typeof(MessageModel);
+        public override Type OutputModel => typeof(MessageResult);
         public override string Description { get; set; } = "Get account home";
     }
 }

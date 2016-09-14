@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F3EC7DD-2DB2-4C39-A983-DA2CAFD8F018}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MakingSense.AspNet.HypermediaApi.Seed", "src\MakingSense.AspNet.HypermediaApi.Seed\MakingSense.AspNet.HypermediaApi.Seed.xproj", "{B05F79AB-C68F-4285-A3BC-C4EADC9F96D7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MakingSense.AspNetCore.HypermediaApi.Seed", "src\MakingSense.AspNetCore.HypermediaApi.Seed\MakingSense.AspNetCore.HypermediaApi.Seed.xproj", "{B05F79AB-C68F-4285-A3BC-C4EADC9F96D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
